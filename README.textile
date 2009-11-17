@@ -16,7 +16,7 @@ cd /path/to/radiant
 git submodule add git://github.com/acrookston/random_child.git vendor/extensions/random_child
 </pre>
 
-If you don't have `git` you can "download a tarball":git://github.com/acrookston/random_child/master/tarball
+If you don't have `git` you can "download a tarball":git://github.com/acrookston/random_child/tarball/master
 Then untar it into @vendor/extensions/random_child@ in your radiant directory.
 
 
@@ -26,11 +26,13 @@ Instead of using the normal @<r:children:each>...</r:children:each>@ use @<r:chi
 
 Valid arguments are:
 <pre>
+<code>
 <r:children:random [limit="number"]
  [by="published_at|updated_at|created_at|slug|title|keywords|description"]
  [status="draft|reviewed|published|hidden|all"]>
  ...
 </r:children:random>
+</code>
 </pre>
 
 
