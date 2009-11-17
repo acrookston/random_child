@@ -1,0 +1,39 @@
+h1. RandomChild
+
+RandomChild is a Radiant CMS extension that adds tags that work similar to @<r:children:each>@
+yet randomizes the order of the child pages.
+
+RandomChild with other plugins:
+
+If you are using reorder plugin from Sean Cribbs the order of the child pages will be overridden.
+This plugin is compatible with the Modulo extension from Lonnon (http://github.com/lonnon/modulo)
+
+
+h2. Installation
+
+<pre>
+cd /path/to/radiant
+git submodule add git://github.com/acrookston/random_child.git vendor/extensions/random_child
+</pre>
+
+If you don't have `git` you can "download a tarball":git://github.com/acrookston/random_child/master/tarball
+Then untar it into @vendor/extensions/random_child@ in your radiant directory.
+
+
+h3. How it works
+
+Instead of using the normal @<r:children:each>...</r:children:each>@ use @<r:children:random>...</r:children:random>@ and then use it as normal.
+
+Valid arguments are:
+<pre>
+<r:children:random [limit="number"]
+ [by="published_at|updated_at|created_at|slug|title|keywords|description"]
+ [status="draft|reviewed|published|hidden|all"]>
+ ...
+</r:children:random>
+</pre>
+
+
+h3. Caching
+
+Please note that the radiant caching will affect the output and only re-randomize the child pages when the cache time limit is up.
